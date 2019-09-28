@@ -19,8 +19,8 @@
     </nav>
     <div style="height: 1000px; padding-top:100px; position: relative; text-align: center; color: red; text-weight: bold;">
       <img style="width:100%; height:100%; filter: blur(5px); -webkit-filter: blur(5px);" src="images/Tankekraft.png">
-      <div class="centered" style=''>
-        <h1 style="text-weight: bold;">Welcome to Amit's World 🙃</h1>
+      <div class="centered visi" style=''>
+        <h1 class=''>Welcome to Amit's World 🙃</h1>
         <a class="btn btn-danger btn-lg active" href="about.html">Enter</a>
       </div>
     </div>
@@ -67,8 +67,90 @@
       from {}
       to {color: #FFD700}
     }
+    @-webkit-keyframes sans {
+      from {}
+      to {font-size: 50px}
+    }
+    @keyframes sans {
+      from {}
+      to {font-size: 50px}
+    }
+    @-webkit-keyframes unsans {
+      from {font-size: 50px;}
+      to {font-size: 2.5em}
+    }
+    @keyframes unsans {
+      from {font-size: 50px;}
+      to {font-size: 2.5em}
+    }
+    @-webkit-keyframes visibility {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @keyframes visibility {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @-webkit-keyframes visibility {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @keyframes unvisibility {
+      from {
+        opacity: 1;
+        visibility: visible;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes unvisibility {
+      from {
+        opacity: 1;
+        visibility: visible;
+      }
+      to {
+        opacity: 0;
+      }
+    }
     .box:hover{
       animation-name: golden;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+    div.visi h1{
+      animation-name: unsans;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    div.visi:hover h1{
+      animation-name: sans;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+    div.visi a{
+      visibility: hidden;
+      animation-name: unvisibility;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    div.visi:hover a{
+      animation-name: visibility;
       animation-duration: 2s;
       animation-fill-mode: forwards;
     }
