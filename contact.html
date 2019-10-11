@@ -14,7 +14,7 @@
   <body>
     <nav style="padding:5px; padding-top:10px" class="navbar navbar-inverse navbar-fixed-top">
       <ul style="right:0;" class="nav navbar-nav" style="padding-top: 10px">
-        <li style="padding-right:50px"><a p class="box" href="index.html"><p style="font-family: 'Snell Roundhand', cursive; font-size:40px">Amit Sant</p></a></li>
+        <li style="padding-right:50px"><a p class="box" href="index.html"><p class="name-link">Amit Sant</p></a></li>
         <li><a class="underline" href="about.html"><p>ABOUT</p></a></li>
         <li><a class="underline" href="projects.html"><p>PROJECTS</p></a></li>
         <li><a class="underline" href="contact.html"><p>CONTACT</p></a></li>
@@ -72,23 +72,33 @@
     </div>
   </body>
   <script>
-    $( '#submit' ).click(function() {
-      name = $( '#fname' ).val()
-      email = $( '#email' ).val()
-      body = $( '#body' ).val()
-      subject = $( '#subject' ).val()
-      $( '#subject' ).val('')
-      $( '#fname' ).val('')
-      $( '#email' ).val('')
-      $( '#body' ).val('')
-      Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "amit.sant.2000@gmail.com",
-        Password : "f071f4ee-c6f0-4af6-9d7d-2d04908c1e6f",
-        To : 'amitsant2000@berkeley.edu',
-        From : 'amit.sant.2000@gmail.com',
-        Subject : "Website - Name: "+ name + " - Email: " + email+ " - Subject: "+ subject,
-        Body : body}).then( message => alert(message));
+  $(document).ready(function() {
+    $("#submit").click(function() {
+        var name = $("#fname").val();
+        var email = $("#email").val();
+        var message = $("#body").val();
+        var subjec = $("#subject").val();
+        if (name == '' || email == '' || message == '') {
+          alert("Please Fill Required Fields");
+        } else {
+          $("#fname").val('');
+          $("#email").val('');
+          $("#body").val('');
+          $("#subject").val('');
+          // Returns successful data submission message when the entered information is stored in database.
+          $.post("contact_form.php", {
+            name1: name,
+            email1: email,
+            message1: message,
+            subject: subjec,
+            }, function(data) {
+              console.log('hello')
+              if (data == "Your Query has been received, We will contact you soon.") {
+                alert(data)
+              }
+            });
+        }
+      });
     });
   </script>
 </html>

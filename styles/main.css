@@ -156,12 +156,16 @@ a.socialIcon:hover, .socialHoverClass {
     user-select: none;
 }
 .form-holder {
+  color: #FFFFFF;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #222222;
   padding: 20px;
   margin-bottom: 50px;
+  opacity: 1
 }
 .project {
+  margin-left: 40px;
+  margin-right: 40px;
   -webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -169,28 +173,31 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.3s ease-in-out;
 }
 .project:hover {
-  background-color: #222222;
+  background-color: #f2f2f2;
   opacity: .95;
+  transform: scale(1.2);
+  margin-left: 60px;
+  margin-right: 60px;
 }
 p.proj-text {
-  color: #222222;
+  color: #FFFFFF;
   -webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 }
 div.project:hover h2.proj-title {
-  color: #FFFFFF;
+  color: #222222;
 }
 h2.proj-title {
-  color: #222222;
+  color: #FFFFFF;
   -webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 }
 div.project:hover p.proj-text {
-  color: #FFFFFF;
+  color: #222222;
 }
 input[type=text], input[type=email], textarea {
   width: 100%;
@@ -201,4 +208,8 @@ input[type=text], input[type=email], textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical
+}
+.name-link {
+  font-family: 'Snell Roundhand', cursive;
+  font-size:40px
 }
