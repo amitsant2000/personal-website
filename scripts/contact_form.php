@@ -1,17 +1,14 @@
 <?php
-// Fetching Values from URL.
-$name = $_POST['name1'];
-$email = $_POST['email1'];
-$message = $_POST['message1'];
+ini_set('display_errors', 1);
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
 $subject = $_POST['subject']
-$email = filter_var($email, FILTER_SANITIZE_EMAIL); // Sanitizing E-mail.
-// After sanitization Validation is performed
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
   if (!preg_match("/^[0-9]{10}$/", $contact)) {
   echo "<span>* Please Fill Valid Contact No. *</span>";
   } else {
-    $subject = $name;
-    // To send HTML mail, the Content-type header must be set.
     $headers = 'MIME-Version: 1.0' . "rn";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "rn";
     $headers .= 'From:' . $email. "rn"; // Sender's Email

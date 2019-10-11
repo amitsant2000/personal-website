@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <meta charset="utf-8">
     <title>Amit Sant</title>
   </head>
@@ -77,22 +76,21 @@
         var name = $("#fname").val();
         var email = $("#email").val();
         var message = $("#body").val();
-        var subjec = $("#subject").val();
+        var subject = $("#subject").val();
         if (name == '' || email == '' || message == '') {
           alert("Please Fill Required Fields");
         } else {
-          $("#fname").val('');
-          $("#email").val('');
-          $("#body").val('');
-          $("#subject").val('');
-          // Returns successful data submission message when the entered information is stored in database.
           $.post("scripts/contact_form.php", {
-            name1: name,
-            email1: email,
-            message1: message,
-            subject: subjec,
+            name: name,
+            email: email,
+            message: message,
+            subject: subject,
             }, function(data) {
               console.log('hello')
+              $("#fname").val('');
+              $("#email").val('');
+              $("#body").val('');
+              $("#subject").val('');
               if (data == "Your Query has been received, We will contact you soon.") {
                 alert(data)
               }
