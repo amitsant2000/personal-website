@@ -71,32 +71,30 @@
     </div>
   </body>
   <script>
-  $(document).ready(function() {
-    $("#submit").click(function() {
-        var name = $("#fname").val();
-        var email = $("#email").val();
-        var message = $("#body").val();
-        var subject = $("#subject").val();
-        if (name == '' || email == '' || message == '') {
-          alert("Please Fill Required Fields");
-        } else {
-          $.post("scripts/contact_form.php", {
-            name: name,
-            email: email,
-            message: message,
-            subject: subject,
-            }, function(data) {
-              console.log('hello')
-              $("#fname").val('');
-              $("#email").val('');
-              $("#body").val('');
-              $("#subject").val('');
-              if (data == "Your Query has been received, We will contact you soon.") {
-                alert(data)
-              }
-            });
-        }
-      });
+  $("#submit").click(function() {
+      var name = $("#fname").val();
+      var email = $("#email").val();
+      var message = $("#body").val();
+      var subject = $("#subject").val();
+      if (name == '' || email == '' || message == '') {
+        alert("Please Fill Required Fields");
+      } else {
+        $.post("scripts/contact_form.php", {
+          name: name,
+          email: email,
+          message: message,
+          subject: subject,
+          }, function(data) {
+            console.log('hello')
+            $("#fname").val('');
+            $("#email").val('');
+            $("#body").val('');
+            $("#subject").val('');
+            if (data == "Your Query has been received, We will contact you soon.") {
+              alert(data)
+            }
+          });
+      }
     });
   </script>
 </html>

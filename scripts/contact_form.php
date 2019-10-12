@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-chmod(0644);
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
