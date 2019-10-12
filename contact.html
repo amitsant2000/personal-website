@@ -76,9 +76,11 @@
       var email = $("#email").val();
       var message = $("#body").val();
       var subject = $("#subject").val();
+      console.log('hello')
       if (name == '' || email == '' || message == '') {
         alert("Please Fill Required Fields");
       } else {
+        console.log('hello2')
         $.post("scripts/contact_form.php", {
           name: name,
           email: email,
