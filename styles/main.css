@@ -199,6 +199,9 @@ h2.proj-title {
 div.project:hover p.proj-text {
   color: #222222;
 }
+input{
+  color:black;
+}
 input[type=text], input[type=email], textarea {
   width: 100%;
   padding: 12px;
