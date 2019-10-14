@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/amitsant2000/personal-website/issues"
   },
-  "homepage": "https://github.com/amitsant2000/personal-website#readme"
+  "homepage": "https://github.com/amitsant2000/personal-website#readme",
+  "dependencies": {
+    "http": "0.0.0",
+    "http-errors": "^1.7.3",
+    "path": "^0.12.7"
+  }
 }
