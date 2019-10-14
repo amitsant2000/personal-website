@@ -19,6 +19,7 @@
   "homepage": "https://github.com/amitsant2000/personal-website#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "hbs": "^4.0.6",
     "http": "0.0.0",
     "http-errors": "^1.7.3",
     "path": "^0.12.7"
