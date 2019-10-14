@@ -1,16 +1,24 @@
 var createError = require('http-errors');
-express = include('express')
+express = require('express')
 var path = require('path');
 var app = express()
 var http = require('http');
-var port = normalizePort(process.env.PORT || '3001');
+var port = process.env.PORT || '3001';
 app.set('port', port);
 var server = http.createServer(app);
 server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.get('/', function(res,req,next){
-  res.render('index');
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', function(req,res,next){
+  res.render('index', {title: 'Home'})
+});
+app.get('/about', function(req,res,next){
+  res.render('about', {title: 'About'})
+});
+app.get('/contact', function(req,res,next){
+  res.render('contact', {title: 'Contact Me'})
+});
+app.get('/projects', function(req,res,next){
+  res.render('projects', {title: 'Projects'})
 });
