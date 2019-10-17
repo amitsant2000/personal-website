@@ -40,13 +40,13 @@ a.box p{
 	-o-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
-div.visi h1{
+div.visi h1#welcome-header{
   -webkit-transition: all 1s ease-out;
 	-moz-transition: all 1s ease-out;
 	-o-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
-div.visi:hover h1{
+div.visi:hover h1#welcome-header{
   -moz-transform: scale(1.5);
 	-webkit-transform: scale(1.5);
 	-ms--transform: scale(1.5);
