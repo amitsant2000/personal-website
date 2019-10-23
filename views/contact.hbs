@@ -36,5 +36,17 @@
             </div>
           </div>
         </form>
+        <script>
+          $('.hello').onSubmit(function(){
+            name = $('#fname').val()
+            email = $('#email').val()
+            subject = $('#subject').val()
+            body = $('#body').val()
+            $('#fname').val('')
+            $('#email').val('')
+            $('#subject').val('')
+            $('#body').val('')
+          })
+        </script>
       </div>
     </div>
