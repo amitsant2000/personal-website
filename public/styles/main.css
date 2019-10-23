@@ -40,13 +40,75 @@ a.box p{
 	-o-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
-div.visi h1#welcome-header{
-  -webkit-transition: all 1s ease-out;
-	-moz-transition: all 1s ease-out;
-	-o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+
+
+@keyframes grow {
+  from {
+    transform: scale(1.0);
+    margin-bottom: 0px;
+  }
+  to   {
+    margin-bottom: 50px;
+    transform: scale(1.5);
+  }
 }
-div.visi:hover h1#welcome-header{
+
+/* Firefox < 16 */
+@-moz-keyframes grow {
+  from {
+    transform: scale(1.0);
+    margin-bottom: 0px;
+  }
+  to   {
+    margin-bottom: 50px;
+    transform: scale(1.5);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes grow {
+    from {
+      transform: scale(1.0);
+      margin-bottom: 0px;
+    }
+    to   {
+      margin-bottom: 50px;
+      transform: scale(1.5);
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes grow {
+  from {
+    transform: scale(1.0);
+    margin-bottom: 0px;
+  }
+  to   {
+    margin-bottom: 50px;
+    transform: scale(1.5);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes grow {
+  from {
+    transform: scale(1.0);
+    margin-bottom: 0px;
+  }
+  to   {
+    transform: scale(1.5);
+    margin-bottom: 50px;
+  }
+}
+div.visi h1.welcome-header{
+  -webkit-animation: grow 2s forwards; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: grow 2s forwards; /* Firefox < 16 */
+      -ms-animation: grow 2s forwards; /* Internet Explorer */
+       -o-animation: grow 2s forwards; /* Opera < 12.1 */
+          animation: grow 2s forwards;
+}
+/*
+div.visi::after h1.welcome-header-done{
   -moz-transform: scale(1.5);
 	-webkit-transform: scale(1.5);
 	-ms--transform: scale(1.5);
@@ -58,6 +120,75 @@ div.visi:hover h1#welcome-header{
 	-ms-transition: all 2s;
 	transition: all 2s;
 }
+*/
+@keyframes appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to   {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to   {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes appear {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    to   {
+      opacity: 1;
+      visibility: visible;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to   {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to   {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+div.visi a{
+  -webkit-animation: appear 2s forwards; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: appear 2s forwards; /* Firefox < 16 */
+      -ms-animation: appear 2s forwards; /* Internet Explorer */
+       -o-animation: appear 2s forwards; /* Opera < 12.1 */
+          animation: appear 2s forwards;
+}
+/*
 div.visi a{
   opacity: 0;
   visibility: hidden;
@@ -75,6 +206,7 @@ div.visi:hover a{
 	-ms-transition: all 2s;
 	transition: all 2s;
 }
+*/
 ul.social-network {
 	list-style: none;
 	display: inline;
@@ -208,4 +340,8 @@ input[type=text], input[type=email], textarea {
 .name-link {
   font-family: 'Snell Roundhand', cursive;
   font-size:40px
+}
+
+div.decentered-p p{
+  text-align: left;
 }
