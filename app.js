@@ -1,15 +1,26 @@
+const mailgun = require("mailgun-js");
+const DOMAIN = "sandbox35589a5931cb4227bbfd40d053a58292.mailgun.org";
+const mg = mailgun({apiKey: "e5ca749401b006e6d30c2ad1bbd92b5a-2dfb0afe-6d51a29c", domain: DOMAIN})
 var createError = require('http-errors');
 express = require('express')
 var path = require('path');
+var logger = require('morgan');
+var bodyParser = require('body-parser')
 var app = express()
 var http = require('http');
+var cookieParser = require('cookie-parser');
 var port = process.env.PORT || '5000';
 app.set('port', port);
 var server = http.createServer(app);
 server.listen(port);
+app.use(logger('dev'));
+app.use(express.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req,res,next){
   res.render('index', {title: 'Home'})
 });
@@ -22,3 +33,16 @@ app.get('/contact', function(req,res,next){
 app.get('/projects', function(req,res,next){
   res.render('projects', {title: 'Projects'})
 });
+app.post('/contact',function(req,res,next){
+  let q = req.body
+  let data = {
+    'from': 'Mailgun Sandbox <postmaster@sandbox35589a5931cb4227bbfd40d053a58292.mailgun.org>',
+    'to': 'amitsant2000@berkeley.edu',
+    'subject': q.fullname + ' - ' + q.email + ' - ' + q.subject,
+    'text': q.body
+  }
+  mg.messages().send(data, function (error, body) {
+  	console.log(body);
+    res.redirect('/contact')
+  });
+})
