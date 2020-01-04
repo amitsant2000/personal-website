@@ -1,6 +1,5 @@
 const mailgun = require("mailgun-js");
-const DOMAIN = "sandbox35589a5931cb4227bbfd40d053a58292.mailgun.org";
-const mg = mailgun({apiKey: "e5ca749401b006e6d30c2ad1bbd92b5a-2dfb0afe-6d51a29c", domain: DOMAIN})
+const mg = mailgun({apiKey: process.env.SBOXKEY, domain: process.env.DOMAIN})
 var createError = require('http-errors');
 express = require('express')
 var path = require('path');
