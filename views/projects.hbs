@@ -1,30 +1,71 @@
-    <div style="height: 1000px; padding-top:100px; position: relative; text-align: center; color: red; text-weight: bold;">
-      <img style="width:100%; height:100%; filter: blur(5px); -webkit-filter: blur(5px);" src="images/Tankekraft.png">
-      <div class="centered" style=''>
-        <div class = 'container'>
-          <div class='row align-items justify-content'>
-            <a class='project-a' href='https://github.com/amitsant2000/space-invaders-cli' target="_blank">
-              <div class="form-holder project col-xs-3" style="height:400px">
-                <h2 class='proj-title' style='margin-top:0;'>CLI Space Invaders</h2>
-                <img style="width:100%; height:70%;" src="https://upload.wikimedia.org/wikipedia/en/0/0f/Space_Invaders_flyer%2C_1978.jpg">
-                <p class='proj-text'>The classic game in the CLI made using C++.</p>
-              </div>
-            </a>
-            <a class='project-a' href='https://github.com/amitsant2000/steal-my-look' target="_blank">
-              <div class="form-holder project col-xs-3" style="height:400px;">
-                <h2 class='proj-title' style='margin-top:0;'>Share My Look [WIP]</h2>
-                <img style="width:100%; height:70%;" src="images/share-my-look.png">
-                <p class='proj-text'>Led the development of the backend using NodeJS and MongoDB.</p>
-              </div>
-            </a>
-            <a class='project-a' href='https://github.com/amitsant2000/hohoho' target="_blank">
-              <div class="form-holder project col-xs-3" style="height:400px;">
-                <h2 class='proj-title' style='margin-top:0;'>Ho! Ho! Ho! [Horizons]</h2>
-                <img style="width:100%; height:70%;" src="images/horizons.png">
-                <p class='proj-text'>Used ReactJS to build a clone of Yo!. Part of the Horizons bootcamp.</p>
-              </div>
-            </a>
+<div class = ''>
+    <div class='align-items justify-content'>
+        <div class="row kaggle">
+          <div class="form-holder project" style="">
+            <h2 class='proj-title' style='margin-top:0;'>CLI Space Invaders</h2>
+            <img style="width:100%;;" src="https://upload.wikimedia.org/wikipedia/en/0/0f/Space_Invaders_flyer%2C_1978.jpg">
+            <p class='proj-text'>Arcade game made using C++.</p>
+            <ul class="social-network social-circle" style="display:block;">
+              <li style="display:block;">
+                <a href="https://github.com/amitsant2000/space-invaders-cli" target="_blank" class="icoGithub2" title="Github">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="form-holder project" style="">
+            <h2 class='proj-title' style='margin-top:0;'>Share My Look [WIP]</h2>
+            <img style="width:100%;;" src="images/share-my-look.png">
+            <p class='proj-text'>Fashion app prototype made with NodeJS.</p>
+            <ul class="social-network social-circle" style="display:block;">
+              <li style="display:block;">
+                <a href="https://github.com/amitsant2000/steal-my-look" target="_blank" class="icoGithub2" title="Github">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="row kaggle">
+          <div class="form-holder project" style="margin-bottom:0;">
+            <h2 class='proj-title' style='margin-top:0;'>Yo! Clone [Horizons]</h2>
+            <img style="width:100%;;" src="images/horizons.png">
+            <p class='proj-text'>Clone of Yo! built with ReactJS.</p>
+            <ul class="social-network social-circle" style="display:block;">
+              <li style="display:block;">
+                <a href="https://github.com/amitsant2000/hohoho" target="_blank" class="icoGithub2" title="Github">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="last" class="form-holder project" style="margin-bottom:0;">
+            <h2 class='proj-title' style='margin-top:0;'>Physics Simulation</h2>
+            <img style="width:100%;" src="images/phys.png">
+            <p class='proj-text'>Projectile motion sim made with HTML Canvas.</p>
+            <ul class="social-network social-circle" style="display:block;">
+              <li style="display:inline-block;">
+                <a href="https://github.com/amitsant2000/kingmaker" target="_blank" class="icoGithub2" title="Github">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li style="display:inline-block;">
+                <a href="https://physicsgeschke.herokuapp.com/" target="_blank" class="icoLink" title="Link">
+                  <i class="fa fa-external-link"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+</div>
+<script>
+  function about() {
+    if (window.innerWidth <= 850) {
+      $(".kaggle").removeClass('row');
+      $(".kaggle").addClass('tall');
+    } else {
+      $(".kaggle").addClass('row')
+      $(".kaggle").removeClass('tall');
+    }
+  }
+</script>
