@@ -11,7 +11,6 @@ var cookieParser = require('cookie-parser');
 var port = process.env.PORT || '5000';
 app.set('port', port);
 var server = http.createServer(app);
-var fs = require('fs');
 server.listen(port);
 app.use(logger('dev'));
 app.use(express.json());
