@@ -72,5 +72,17 @@
         $(".kaggle").removeClass('tall');
       }
     }
+    $(document).ready(function() {
+      $( ".contacter" ).click(function() {
+        console.log($("#contact").css("font-size"))
+        $( "#contact" ).animate({
+          "font-size":20
+        }, 900, function() {
+          $( "#contact" ).animate({
+            "font-size":16
+          }, 900);
+        });
+      })
+    });
   </script>
 </html>
