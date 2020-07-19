@@ -1,4 +1,4 @@
-/**
+
 const ctx = $("#c").getContext("2d")
 var canvas = $('#c');
 function loop() {
@@ -8,4 +8,3 @@ function loop() {
   ctx.ellipse(x, y, ballSize, ballSize, 0, 0, 2*Math.pi);
 }
 raf = window.requestAnimationFrame(loop);
-*/
