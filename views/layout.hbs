@@ -27,6 +27,9 @@
             <a class="nav-link" href="/about">about</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/resources">resources</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/projects">projects</a>
           </li>
           <li class="nav-item">
@@ -46,6 +49,11 @@
                   <i class="fa fa-github"></i>
                 </a>
               </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UC2SdUzFfiqn-dbcpzvzb6SQ" target="_blank" class="icoYouTube" title="Github">
+                  <i class="fa fa-youtube-play"></i>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -54,14 +62,14 @@
         </div>
     </div>
   </body>
-
   <script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
+    function about() {
+      if (window.innerWidth <= 850) {
+        $(".kaggle").removeClass('row');
+        $(".kaggle").addClass('tall');
       } else {
-        x.className = "topnav";
+        $(".kaggle").addClass('row')
+        $(".kaggle").removeClass('tall');
       }
     }
   </script>

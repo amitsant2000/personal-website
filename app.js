@@ -1,5 +1,3 @@
-const mailgun = require("mailgun-js");
-const mg = mailgun({apiKey: process.env.SBOXKEY, domain: process.env.DOMAIN})
 var createError = require('http-errors');
 express = require('express')
 var path = require('path');
@@ -28,6 +26,9 @@ app.get('/about', function(req, res, next){
 });
 app.get('/contact', function(req, res, next){
   res.render('contact', {title: 'Contact Me'})
+});
+app.get('/resources', function(req, res, next){
+  res.render('resources', {title: 'Resources'})
 });
 app.get('/projects', function(req, res, next){
   res.render('projects', {title: 'Projects'})
