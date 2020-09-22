@@ -27,6 +27,9 @@ app.get('/about', function(req, res, next){
 app.get('/contact', function(req, res, next){
   res.render('contact', {title: 'Contact Me'})
 });
+app.get('/teaching', function(req, res, next){
+  res.render('teaching', {title: 'Teaching'})
+});
 app.get('/resources', function(req, res, next){
   res.render('resources', {title: 'Resources'})
 });
