@@ -1,8 +1,13 @@
+h1, h2, h3, h4, h5, h6, a, p, li {
+  text-transform: lowercase;
+}
+
 main {
   overflow: hidden;
 }
 html,body
 {
+    scroll-behavior: smooth;
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -14,6 +19,12 @@ html,body
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .bg-dark {
   font-family:sans-serif;
@@ -46,7 +57,7 @@ a.left:hover:before {
     margin-bottom: 0px;
   }
   to   {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     transform: scale(1.5);
   }
 }
@@ -58,7 +69,7 @@ a.left:hover:before {
     margin-bottom: 0px;
   }
   to   {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     transform: scale(1.5);
   }
 }
@@ -70,7 +81,7 @@ a.left:hover:before {
       margin-bottom: 0px;
     }
     to   {
-      margin-bottom: 50px;
+      margin-bottom: 0px;
       transform: scale(1.5);
     }
 }
@@ -82,7 +93,7 @@ a.left:hover:before {
     margin-bottom: 0px;
   }
   to   {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     transform: scale(1.5);
   }
 }
@@ -95,10 +106,28 @@ a.left:hover:before {
   }
   to   {
     transform: scale(1.5);
-    margin-bottom: 50px;
+    margin-bottom: 0px;
   }
 }
 div.visi h1.welcome-header{
+  -webkit-animation: grow 2s forwards; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: grow 2s forwards; /* Firefox < 16 */
+      -ms-animation: grow 2s forwards; /* Internet Explorer */
+       -o-animation: grow 2s forwards; /* Opera < 12.1 */
+          animation: grow 2s forwards;
+}
+
+div.visi a.scroll-down{
+      color: inherit;
+  font-size: 50px;
+}
+div.visi a.scroll-down:hover{
+      color: #d7d7d7;
+  font-size: 50px;
+}
+
+div.visi a.scroll-down i{
+              
   -webkit-animation: grow 2s forwards; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: grow 2s forwards; /* Firefox < 16 */
       -ms-animation: grow 2s forwards; /* Internet Explorer */
@@ -252,7 +281,10 @@ a.socialIcon:hover, .socialHoverClass {
   color: #FFFFFF;
   background-color: #222222;
   padding: 20px;
-  opacity: 1
+  opacity: 1;
+  display: inline-block;
+  width: 100%;
+  height:100vh;
 }
 .project {
   height: 500px;

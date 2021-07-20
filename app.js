@@ -21,6 +21,7 @@ app.set('view engine', 'hbs');
 app.get('/', function(req, res, next){
   res.render('index', {title: 'Home'})
 });
+/*
 app.get('/about', function(req, res, next){
   res.render('about', {title: 'About'})
 });
@@ -36,3 +37,4 @@ app.get('/resources', function(req, res, next){
 app.get('/projects', function(req, res, next){
   res.render('projects', {title: 'Projects'})
 });
+*/
