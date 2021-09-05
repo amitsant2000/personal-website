@@ -284,7 +284,6 @@ a.socialIcon:hover, .socialHoverClass {
   opacity: 1;
   display: inline-block;
   width: 100%;
-  height:100vh;
 }
 .project {
   height: 500px;
